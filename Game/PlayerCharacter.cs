@@ -6,7 +6,16 @@ namespace Game
 {
     class PlayerCharacter
     {
+        private readonly ISpecialDefence _specialDefence;
+
+        public PlayerCharacter(ISpecialDefence specialDefence)
+        {
+            _specialDefence = specialDefence;
+        }
+
         public string Name { get; set; }
+
+        public int Health { get; set; } = 100;
 
         public int? DaysSincelastLogin { get; set;}
 
@@ -20,5 +29,17 @@ namespace Game
             DaysSincelastLogin = null;        
         }
 
+        public void Hit(int damage)
+        {
+            int damageReduction = 0;
+
+            damageReduction = _specialDefence.CalculateDamageReduction(damage);
+
+            int totalDamageTaken = damage - damageReduction;
+
+            Health -= totalDamageTaken;
+
+            Console.WriteLine($"{Name}'s health has been reduced by {totalDamageTaken} to {Health}");
+        }
     }
 }

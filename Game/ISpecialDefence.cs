@@ -5,8 +5,7 @@ using System.Text;
 namespace Game
 {
     public interface ISpecialDefence
-
     {
-        int CalculateDamagereduction(int totalDamage);
+        int CalculateDamageReduction(int totalDamage);
     }
 }
