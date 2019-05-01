@@ -8,7 +8,7 @@ namespace Game
     {
         public int CalculateDamageReduction(int totalDamage)
         {
-            return 1;
+            return 0;
         }
     }
 }

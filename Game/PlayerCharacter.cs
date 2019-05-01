@@ -17,23 +17,14 @@ namespace Game
 
         public int Health { get; set; } = 100;
 
-        public int? DaysSincelastLogin { get; set;}
-
-        public DateTime? DateofBirth { get; set;}
-
-        public bool? IsNew { get; set;}
-
-        public PlayerCharacter()
-        {
-            DateofBirth = null;
-            DaysSincelastLogin = null;        
-        }
-
         public void Hit(int damage)
         {
             int damageReduction = 0;
 
-            damageReduction = _specialDefence.CalculateDamageReduction(damage);
+            if (_specialDefence != null)
+            {
+                damageReduction = _specialDefence.CalculateDamageReduction(damage);
+            }
 
             int totalDamageTaken = damage - damageReduction;
 

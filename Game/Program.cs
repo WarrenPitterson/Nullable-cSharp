@@ -6,11 +6,25 @@ namespace Game
     {
         static void Main(string[] args)
         {
-            var player = new PlayerCharacter();
-            player.Name = "Warren";
-            player.DaysSincelastLogin = 101;
+            PlayerCharacter Warren = new PlayerCharacter(new DiamondSkinDefence())
+            {
+                Name = "Warren"
+            };
 
-            PlayerDisplay.Write(player);
+            PlayerCharacter Bob = new PlayerCharacter(new DiamondSkinDefence())
+            {
+                Name = "Bob"
+            };
+
+            PlayerCharacter Steve = new PlayerCharacter(new DiamondSkinDefence())
+            {
+                Name = "Steve"
+            };
+
+
+            Warren.Hit(10);
+            Bob.Hit(20);
+            Steve.Hit(30);
 
             Console.ReadLine();
             
