@@ -6,7 +6,14 @@ namespace Game
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var player = new PlayerCharacter();
+            player.Name = "Warren"; 
+            player.DaysSincelastLogin = null;
+
+            PlayerDisplay.Write(player);
+
+            Console.ReadLine();
+            
         }
     }
 }
