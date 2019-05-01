@@ -7,8 +7,8 @@ namespace Game
         static void Main(string[] args)
         {
             var player = new PlayerCharacter();
-            player.Name = "Warren"; 
-            player.DaysSincelastLogin = null;
+            player.Name = "Warren";
+            player.DaysSincelastLogin = 101;
 
             PlayerDisplay.Write(player);
 
