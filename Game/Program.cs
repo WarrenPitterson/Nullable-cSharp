@@ -11,22 +11,21 @@ namespace Game
                 Name = "Warren"
             };
 
-            PlayerCharacter Bob = new PlayerCharacter(new DiamondSkinDefence())
+            PlayerCharacter Bob = new PlayerCharacter(new IronBonesDefence())
             {
                 Name = "Bob"
             };
 
-            PlayerCharacter Steve = new PlayerCharacter(new DiamondSkinDefence())
+            PlayerCharacter Steve = new PlayerCharacter(SpecialDefence.Null)
             {
                 Name = "Steve"
             };
 
-
-            Warren.Hit(10);
-            Bob.Hit(20);
+            Warren.Hit(30);
+            Bob.Hit(30);
             Steve.Hit(30);
 
-            Console.ReadLine();
+            Console.ReadKey();
             
         }
     }
